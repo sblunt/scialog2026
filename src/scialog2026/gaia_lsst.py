@@ -43,7 +43,7 @@ plt.figure(figsize=(5, 5))
 
 for i, m_r in enumerate(
     [
-        16,
+        # 16,
         18,
         20,
     ]
@@ -73,9 +73,11 @@ for i, m_r in enumerate(
 
     # compute acceleration sensitivity of Gaia DR4 and Gaia-LSST
     gaia_acceleration_floor = pm_unc_gaia_dr4 / delta_t_gaia_dr4
-    gaia_dr4_lsst_acceleration_floor = (
-        pm_unc_gaia_dr4_lsst / delta_t_gaia_lsst_fullsurvey
-    )
+    gaia_dr4_lsst_acceleration_floor = pm_unc_gaia_dr4_lsst / delta_t_gaia_dr4_lsst0
+
+    import pdb
+
+    pdb.set_trace()
 
     # compute detectability limit in mass/orbital separation
     separation_array = np.logspace(-1, np.log10(400), int(1e3))  # [au]
