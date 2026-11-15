@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 from astropy import units as u
 
-# for given r magnitude, pick characteristic distance (assume solar primary)
 # NOTE: r=16-20 is overlap region between Gaia and LSST (Eyer+ 2012)
 
 
@@ -49,6 +48,7 @@ for i, m_r in enumerate(
         20,
     ]
 ):  # NOTE: I'm assume g-band and r-band magnitudes are approx the same
+    # for given r magnitude, pick characteristic distance (assume solar primary)
     solar_absmag_rband = 4.5
     dist_pc = 10 ** ((-solar_absmag_rband + 5 + m_r) / 5)
 
